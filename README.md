@@ -1,6 +1,6 @@
 # PostCSS Plugin Title
 
-[![Build Status](https://travis-ci.org/nathanhood/postcss-variable-media.svg?branch=master)](https://travis-ci.org/nathanhood/postcss-variable-media)
+[![Build Status](https://travis-ci.org/weepower/postcss-wee.svg?branch=master)](https://travis-ci.org/weepower/postcss-wee)
 [![codecov](https://codecov.io/gh/nathanhood/postcss-variable-media/branch/master/graph/badge.svg)](https://codecov.io/gh/nathanhood/postcss-variable-media)
 
 <img align="right" width="135" height="95" src="http://postcss.github.io/postcss/logo-leftp.png" title="Philosopher’s stone, logo of PostCSS">
