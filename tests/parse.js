@@ -1,6 +1,7 @@
 const parse = require('../lib/parse');
 const cases = require('postcss-parser-tests');
 const expect = require('chai').expect;
+const fs = require('fs');
 
 describe('parse', () => {
 	cases.each((name, css, json) => {
@@ -62,5 +63,15 @@ describe('parse mixins', () => {
 			node = root.first.first;
 
 		expect(JSON.stringify(node.arguments[0])).to.equal('{"family":"\'Open Sans\', Arial, sans-serif","color":"#000"}');
+	});
+});
+
+describe('parse comments', () => {
+	it('should parse block comments', () => {
+		let root = parse(fs.readFileSync(__dirname + '/cases/block-comment.css', 'utf-8')),
+			node = root.first;
+
+		expect(node.type).to.equal('comment');
+		expect(node.text).to.equal('------------------------------------*\\\n\t# Comment\n\\*------------------------------------');
 	});
 });

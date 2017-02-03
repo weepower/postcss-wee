@@ -1,4 +1,4 @@
-# PostCSS Plugin Title
+# PostCSS Wee
 
 [![Build Status](https://travis-ci.org/weepower/postcss-wee.svg?branch=master)](https://travis-ci.org/weepower/postcss-wee)
 [![codecov](https://codecov.io/gh/weepower/postcss-wee/branch/master/graph/badge.svg)](https://codecov.io/gh/weepower/postcss-wee)
@@ -6,47 +6,34 @@
 
 <img align="right" width="135" height="95" src="http://postcss.github.io/postcss/logo-leftp.png" title="Philosopher’s stone, logo of PostCSS">
 
-[PostCSS] plugin that allows for defining custom at-rules to represent media queries
+[PostCSS] syntax plugin used in the minimal front-end framework
 
 [PostCSS]: (https://github.com/postcss/postcss)
 
 ```css
-/* before */
-.foo {
-    /* Input example */
-}
-
-/* after */
-.foo {
-  /* Output example */
+.block {
+    mixin(#000, bold, url('/path/to/image.png'));
+    otherMixin(family: 'Open Sans' Arial sans-serif, weight: 700);
 }
 ```
 
 ## Usage
 
 ```js
-postcss([ require('PLUGIN_NAME') ])
+const syntax = require('postcss-wee');
+
+postcss(plugins).process(css, {
+	syntax: syntax
+});
 ```
 
-See [PostCSS] docs for examples for your environment.
+## Syntax Highlighting
 
-Load PostCSS Variables as a PostCSS plugin:
+Right now, you can set Sass syntax highlighting for .pcss files.
 
-```js
-postcss([
-	require('postcss-variables')({ /* options */ })
-]);
-```
+## Recommended Syntax Plugins
 
-## Options
-
-### `option`
-
-Type: `Object`  
-Default: `{}`
-
-This is a brief description
-
-```js
-// Code example
-```
+- [postcss-js-mixins](https://github.com/nathanhood/postcss-js-mixins)
+- [postcss-variables](https://github.com/nathanhood/postcss-variables)
+- [postcss-variable-media](https://github.com/nathanhood/postcss-variable-media)
+- [postcss-nested-selectors](https://github.com/nathanhood/postcss-nested-selectors)

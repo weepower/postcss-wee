@@ -2,6 +2,7 @@ const parse = require('../lib/parse');
 const stringify = require('../lib/stringify');
 const cases = require('postcss-parser-tests');
 const expect = require('chai').expect;
+const fs = require('fs');
 
 function process(css) {
 	let result = '';
@@ -79,6 +80,15 @@ describe('stringify mixins', () => {
 
 	it('should parse font-family arguments as key: value', () => {
 		let css = ".block { mixin(fontFamily: 'Open Sans' Arial sans-serif, color: #000, family: 'Open Sans' Arial sans-serif); }",
+			result = process(css);
+
+		expect(result).to.equal(css);
+	});
+});
+
+describe('stringify comments', () => {
+	it('should stringify block comments', () => {
+		let css = fs.readFileSync(__dirname + '/cases/block-comment.css', 'utf-8'),
 			result = process(css);
 
 		expect(result).to.equal(css);
