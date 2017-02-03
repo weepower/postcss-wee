@@ -1,6 +1,6 @@
 {
   "name": "postcss-wee",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Custom syntax used in the minimal front-end framework",
   "main": "index.js",
   "scripts": {
@@ -9,11 +9,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nathanhood/postcss-variable-media.git"
+    "url": "git+https://github.com/weepower/postcss-wee-syntax.git"
   },
   "keywords": [
     "postcss",
-    "postcss-plugin"
+    "postcss-plugin",
+  	"syntax"
   ],
   "author": "Nathan Hood",
   "license": "MIT",
