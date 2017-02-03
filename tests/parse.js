@@ -28,10 +28,24 @@ describe('parse mixins', () => {
 		expect(JSON.stringify(node.arguments)).to.equal('["1","bold","url(\'test.png\')","#000","rgb(0, 0, 0)"]');
 	});
 
-	it('should parse key: value pairs as arguments', () => {
+	it('should parse key: value pair as argument', () => {
+		let root = parse(".block { mixin(key: value); }"),
+			node = root.first.first;
+
+		expect(JSON.stringify(node.arguments[0])).to.equal('{"key":"value"}');
+	});
+
+	it('should parse many key: value pairs as arguments', () => {
 		let root = parse(".block { mixin(padding: 1, weight: bold, background: url('test.png')); }"),
 			node = root.first.first;
 
 		expect(JSON.stringify(node.arguments[0])).to.equal('{"padding":"1","weight":"bold","background":"url(\'test.png\')"}');
+	});
+
+	it('should parse font-family arguments', () => {
+		let root = parse(".block { mixin('Open Sans' Arial sans-serif); }"),
+			node = root.first.first;
+
+		expect(JSON.stringify(node.arguments)).to.equal('["\'Open Sans\', Arial, sans-serif"]');
 	});
 });
