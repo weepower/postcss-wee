@@ -1,5 +1,5 @@
 {
-  "name": "postcss-wee",
+  "name": "postcss-wee-syntax",
   "version": "1.0.0",
   "description": "Custom syntax used in the minimal front-end framework",
   "main": "index.js",
