@@ -21,6 +21,14 @@ describe('parse mixins', () => {
 		expect(node.name).to.equal('custom');
 	});
 
+	it('should require semi-colon at end of mixin', () => {
+		try {
+			parse('a { custom() }');
+		} catch(e) {
+			expect(e.reason).to.equal('Unknown word');
+		}
+	});
+
 	it('should parse comma separated values as arguments', () => {
 		let root = parse(".block { mixin(1, bold, url('test.png'), #000, rgb(0, 0, 0)); }"),
 			node = root.first.first;
