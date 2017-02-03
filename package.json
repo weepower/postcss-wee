@@ -1,11 +1,11 @@
 {
-  "name": "",
+  "name": "postcss-wee",
   "version": "0.1.0",
-  "description": "",
+  "description": "Custom syntax used in the minimal front-end framework",
   "main": "index.js",
   "scripts": {
     "test": "mocha ./tests/*.js",
-    "report-coverage": "istanbul cover ./node_modules/.bin/_mocha tests.js --report lcovonly -- -R spec && codecov"
+    "report-coverage": "istanbul cover ./node_modules/.bin/_mocha ./tests/*.js --report lcovonly -- -R spec && codecov"
   },
   "repository": {
     "type": "git",
