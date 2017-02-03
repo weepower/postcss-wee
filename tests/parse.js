@@ -56,4 +56,11 @@ describe('parse mixins', () => {
 
 		expect(JSON.stringify(node.arguments)).to.equal('["\'Open Sans\', Arial, sans-serif"]');
 	});
+
+	it('should parse font-family arguments as key: value', () => {
+		let root = parse(".block { mixin(family: 'Open Sans' Arial sans-serif, color: #000); }"),
+			node = root.first.first;
+
+		expect(JSON.stringify(node.arguments[0])).to.equal('{"family":"\'Open Sans\', Arial, sans-serif","color":"#000"}');
+	});
 });
