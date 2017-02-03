@@ -11,3 +11,27 @@ describe('parse', () => {
 		});
 	});
 });
+
+describe('parse mixins', () => {
+	it('should parse mixins', () => {
+		let root = parse('a { custom(); }'),
+			node = root.first.first;
+
+		expect(node.type).to.equal('mixin');
+		expect(node.name).to.equal('custom');
+	});
+
+	it('should parse comma separated values as arguments', () => {
+		let root = parse(".block { mixin(1, bold, url('test.png'), #000, rgb(0, 0, 0)); }"),
+			node = root.first.first;
+
+		expect(JSON.stringify(node.arguments)).to.equal('["1","bold","url(\'test.png\')","#000","rgb(0, 0, 0)"]');
+	});
+
+	it('should parse key: value pairs as arguments', () => {
+		let root = parse(".block { mixin(padding: 1, weight: bold, background: url('test.png')); }"),
+			node = root.first.first;
+
+		expect(JSON.stringify(node.arguments[0])).to.equal('{"padding":"1","weight":"bold","background":"url(\'test.png\')"}');
+	});
+});
