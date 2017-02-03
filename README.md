@@ -1,4 +1,4 @@
-# PostCSS Wee
+# PostCSS Wee Syntax
 
 [![Build Status](https://travis-ci.org/weepower/postcss-wee.svg?branch=master)](https://travis-ci.org/weepower/postcss-wee)
 [![codecov](https://codecov.io/gh/weepower/postcss-wee/branch/master/graph/badge.svg)](https://codecov.io/gh/weepower/postcss-wee)
