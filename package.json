@@ -1,6 +1,6 @@
 {
   "name": "postcss-wee-syntax",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Custom syntax used in the minimal front-end framework",
   "main": "index.js",
   "scripts": {
@@ -14,7 +14,7 @@
   "keywords": [
     "postcss",
     "postcss-plugin",
-  	"syntax"
+    "syntax"
   ],
   "author": "Nathan Hood",
   "license": "MIT",
