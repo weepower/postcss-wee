@@ -65,21 +65,21 @@ describe('stringify mixins', () => {
 	});
 
 	it('should parse font-family arguments', () => {
-		let css = ".block { mixin('Open Sans' Arial sans-serif); }",
+		let css = ".block { mixin(['Open Sans', Arial, sans-serif]); }",
 			result = process(css);
 
 		expect(result).to.equal(css);
 	});
 
 	it('should parse font-family arguments among other arguments', () => {
-		let css = ".block { mixin(bold, 'Open Sans' Arial sans-serif, #000); }",
+		let css = ".block { mixin(bold, ['Open Sans', Arial, sans-serif], #000); }",
 			result = process(css);
 
 		expect(result).to.equal(css);
 	});
 
 	it('should parse font-family arguments as key: value', () => {
-		let css = ".block { mixin(fontFamily: 'Open Sans' Arial sans-serif, color: #000, family: 'Open Sans' Arial sans-serif); }",
+		let css = ".block { mixin(fontFamily: ['Open Sans', Arial, sans-serif], color: #000, family: ['Open Sans', Arial, sans-serif]); }",
 			result = process(css);
 
 		expect(result).to.equal(css);

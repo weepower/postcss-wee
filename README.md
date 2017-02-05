@@ -13,7 +13,7 @@
 ```css
 .block {
     mixin(#000, bold, url('/path/to/image.png'));
-    otherMixin(family: 'Open Sans' Arial sans-serif, weight: 700);
+    otherMixin(family: ['Open Sans', Arial, sans-serif], weight: 700);
 }
 ```
 
