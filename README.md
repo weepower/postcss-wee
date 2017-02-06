@@ -4,7 +4,7 @@
 [![codecov](https://codecov.io/gh/weepower/postcss-wee-syntax/branch/master/graph/badge.svg)](https://codecov.io/gh/weepower/postcss-wee-syntax)
 
 
-<img align="right" width="135" height="95" src="http://postcss.github.io/postcss/logo-leftp.png" title="Philosopher’s stone, logo of PostCSS">
+<img align="right" width="135" height="95" style="display: block;" src="http://postcss.github.io/postcss/logo-leftp.png" title="Philosopher’s stone, logo of PostCSS">
 
 [PostCSS] syntax plugin used in the minimal front-end framework
 
