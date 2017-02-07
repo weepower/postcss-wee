@@ -64,6 +64,13 @@ describe('parse mixins', () => {
 
 		expect(JSON.stringify(node.arguments[0])).to.equal('{"family":"\'Open Sans\', Arial, sans-serif","color":"#000"}');
 	});
+
+	it('should parse css functions with arguments containing commas', () => {
+		let root = parse(".block { mixin(black, rgb(0, 0, 0), url('https://fonts.googleapis.com/css?family=Roboto:300i,400|Sahitya')); }"),
+			node = root.first.first;
+
+		expect(JSON.stringify(node.arguments)).to.equal('["black","rgb(0, 0, 0)","url(\'https://fonts.googleapis.com/css?family=Roboto:300i,400|Sahitya\')"]');
+	});
 });
 
 describe('parse comments', () => {
