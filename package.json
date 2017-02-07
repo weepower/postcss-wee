@@ -1,12 +1,12 @@
 {
   "name": "postcss-wee-syntax",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Custom syntax used in the minimal front-end framework",
   "main": "index.js",
   "scripts": {
     "test": "mocha ./tests/*.js",
     "test:parser": "mocha ./tests/parse.js",
-  	"test:stringifier": "mocha ./tests/stringify.js",
+    "test:stringifier": "mocha ./tests/stringify.js",
     "report-coverage": "istanbul cover ./node_modules/.bin/_mocha ./tests/*.js --report lcovonly -- -R spec && codecov"
   },
   "repository": {
