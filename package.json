@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha ./tests/*.js",
+    "test:parser": "mocha ./tests/parse.js",
+  	"test:stringifier": "mocha ./tests/stringify.js",
     "report-coverage": "istanbul cover ./node_modules/.bin/_mocha ./tests/*.js --report lcovonly -- -R spec && codecov"
   },
   "repository": {
