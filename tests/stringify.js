@@ -33,6 +33,18 @@ describe('stringify', () => {
 			expect(result).to.equal(css);
 		});
 	});
+
+	it('should parse double quoted values', () => {
+		let css = 'html { font-family: \'"1"\' }',
+			root = parse(css),
+			result = '';
+
+		stringify(root, i => {
+			result += i;
+		});
+
+		expect(result).to.equal(css);
+	});
 });
 
 describe('stringify mixins', () => {
@@ -62,6 +74,13 @@ describe('stringify mixins', () => {
 			result = process(css);
 
 		expect(result).to.equal(css);
+	});
+
+	it('should parse combination of arguments, but out of order (ordered arguments before named arguments)', () => {
+		let css = ".block { mixin(top, padding: 1, weight: bold, 20, background: url('test.png')); }",
+			result = process(css);
+
+		expect(result).to.equal(".block { mixin(top, 20, padding: 1, weight: bold, background: url('test.png')); }");
 	});
 
 	it('should parse font-family arguments', () => {
