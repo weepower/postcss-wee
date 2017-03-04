@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/weepower/postcss-wee-syntax.svg?branch=master)](https://travis-ci.org/weepower/postcss-wee-syntax)
 [![codecov](https://codecov.io/gh/weepower/postcss-wee-syntax/branch/master/graph/badge.svg)](https://codecov.io/gh/weepower/postcss-wee-syntax)
-
+[![npm version](https://badge.fury.io/js/postcss-wee-syntax.svg)](https://badge.fury.io/js/postcss-wee-syntax)
 
 <img width="135" height="95" src="http://postcss.github.io/postcss/logo-leftp.png" title="Philosopher’s stone, logo of PostCSS">
 
