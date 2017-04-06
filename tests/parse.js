@@ -44,6 +44,13 @@ describe('parse mixins', () => {
 		expect(JSON.stringify(node.arguments)).to.equal('{"ordered":[],"named":{"key":"value"}}');
 	});
 
+	it('should parse key: value pair with string value', () => {
+		let root = parse(".block { mixin(key: 'value', key2: 4); }"),
+			node = root.first.first;
+
+		expect(JSON.stringify(node.arguments)).to.equal('{"ordered":[],"named":{"key":"\'value\'","key2":"4"}}');
+	});
+
 	it('should parse many key: value pairs as arguments', () => {
 		let root = parse(".block { mixin(padding: 1, weight: bold, background: url('test.png')); }"),
 			node = root.first.first;
